@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Germania+One&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.home {
+  width: 100%;
+  height: 100%;
+
+  .background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+  }
+
+  .title-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+
+    .title {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 60px 100px;
+      margin: auto;
+      max-width: 900px;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+      border-radius: 0;
+      border: 4px solid #bb2205;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      h1 {
+        color: #bb2205;
+        font-size: 3rem;
+        font-family: "Germania One", cursive;
+      }
+    }
+  }
+}
