@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/alexredwood/router/static/css/main.bcfbfae5.chunk.css",
+    "main.js": "/alexredwood/router/static/js/main.ccd03942.chunk.js",
+    "main.js.map": "/alexredwood/router/static/js/main.ccd03942.chunk.js.map",
+    "runtime-main.js": "/alexredwood/router/static/js/runtime-main.e918b9fe.js",
+    "runtime-main.js.map": "/alexredwood/router/static/js/runtime-main.e918b9fe.js.map",
+    "static/css/2.81e02da4.chunk.css": "/alexredwood/router/static/css/2.81e02da4.chunk.css",
+    "static/js/2.2b28fad3.chunk.js": "/alexredwood/router/static/js/2.2b28fad3.chunk.js",
+    "static/js/2.2b28fad3.chunk.js.map": "/alexredwood/router/static/js/2.2b28fad3.chunk.js.map",
+    "index.html": "/alexredwood/router/index.html",
+    "static/css/2.81e02da4.chunk.css.map": "/alexredwood/router/static/css/2.81e02da4.chunk.css.map",
+    "static/css/main.bcfbfae5.chunk.css.map": "/alexredwood/router/static/css/main.bcfbfae5.chunk.css.map",
+    "static/js/2.2b28fad3.chunk.js.LICENSE.txt": "/alexredwood/router/static/js/2.2b28fad3.chunk.js.LICENSE.txt",
+    "static/media/style.scss": "/alexredwood/router/static/media/background.2f7b354a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e918b9fe.js",
+    "static/css/2.81e02da4.chunk.css",
+    "static/js/2.2b28fad3.chunk.js",
+    "static/css/main.bcfbfae5.chunk.css",
+    "static/js/main.ccd03942.chunk.js"
+  ]
+}
