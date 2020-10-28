@@ -6,7 +6,7 @@ import Cart from "./components/Cart";
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/" forceRefresh={true}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/shop" component={Shop} />
