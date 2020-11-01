@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import items from "../items.js";
+import { v4 as uuidv4 } from "uuid";
 
 const Navbar = (props) => {
   const weapons = Object.keys(items.weapons).map((name) => (
-    <Link className="dropdown-item">{name}</Link>
+    <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
+      {name}
+    </Link>
   ));
 
   const armor = Object.keys(items.armor).map((name) => (
-    <Link className="dropdown-item">{name}</Link>
+    <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
+      {name}
+    </Link>
   ));
 
   return (
