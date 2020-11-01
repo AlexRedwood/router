@@ -117,3 +117,12 @@ body {
 #toggle-btn {
   align-self: right;
 }
+
+.shop {
+  padding-top: 120px; // For fixed navbar which has ~50px height
+  background-color: seashell;
+}
+
+.cart {
+  background-color: skyblue;
+}

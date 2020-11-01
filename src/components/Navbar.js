@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import items from "../items.js";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const weapons = Object.keys(items.weapons).map((name) => (
+    <Link className="dropdown-item">{name}</Link>
+  ));
+
+  const armor = Object.keys(items.armor).map((name) => (
+    <Link className="dropdown-item">{name}</Link>
+  ));
+
   return (
     <nav className="navbar-light fixed-top navbar navbar-expand-md bg-light">
       {/* Brand */}
@@ -15,7 +24,7 @@ const Navbar = () => {
       <div className="d-flex cart-container navbar order-md-1 ml-auto mr-3">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link">
+            <Link to={`${props.url}/cart`} className="nav-link">
               <i className="fas fa-shopping-cart"></i>
             </Link>
           </li>
@@ -55,10 +64,7 @@ const Navbar = () => {
               className="dropdown-menu text-right"
               aria-labelledby="weapons-dropdown"
             >
-              <Link className="dropdown-item">Swords</Link>
-              <Link className="dropdown-item">Maces</Link>
-              <Link className="dropdown-item">Polearms</Link>
-              <Link className="dropdown-item">Bows</Link>
+              {weapons}
             </div>
           </li>
 
@@ -66,7 +72,7 @@ const Navbar = () => {
           <li className="nav-item dropdown ml-2">
             <span
               className="nav-link dropdown-toggle"
-              id="weapons-dropdown"
+              id="armor-dropdown"
               role="button"
               data-toggle="dropdown"
               aria-haspopup="true"
@@ -77,14 +83,9 @@ const Navbar = () => {
             {/* Dropwdown items */}
             <div
               className="dropdown-menu text-right"
-              aria-labelledby="weapons-dropdown"
+              aria-labelledby="armor-dropdown"
             >
-              <Link className="dropdown-item">Helmets</Link>
-              <Link className="dropdown-item">Pauldrons</Link>
-              <Link className="dropdown-item">Body armor</Link>
-              <Link className="dropdown-item">Hand armor</Link>
-              <Link className="dropdown-item">Leg armor</Link>
-              <Link className="dropdown-item">Shields</Link>
+              {armor}
             </div>
           </li>
           <div className="dropdown-divider"></div>

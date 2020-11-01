@@ -2,8 +2,8 @@ import React from "react";
 
 const Cart = () => {
   return (
-    <div>
-      <h1>Hello from Cart</h1>
+    <div className="container cart">
+      <h1>Hello from CART</h1>
     </div>
   );
 };
