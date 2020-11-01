@@ -12,6 +12,8 @@ body,
 
 body {
   margin: 0;
+  background-color: #e8e8e8;
+  color: #495464;
 }
 
 /* -- Home page -- */
@@ -120,9 +122,16 @@ body {
 
 .shop {
   padding-top: 120px; // For fixed navbar which has ~50px height
-  background-color: seashell;
 }
 
-.cart {
-  background-color: skyblue;
+.card {
+  background-color: #f4f4f2;
+}
+
+.buy {
+  text-align: right;
+}
+
+.price {
+  font-weight: bold;
 }

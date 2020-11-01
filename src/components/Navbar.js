@@ -2,17 +2,16 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import items from "../items.js";
 import { v4 as uuidv4 } from "uuid";
 
 const Navbar = (props) => {
-  const weapons = Object.keys(items.weapons).map((name) => (
+  const weapons = Object.keys(props.items.weapons).map((name) => (
     <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}
     </Link>
   ));
 
-  const armor = Object.keys(items.armor).map((name) => (
+  const armor = Object.keys(props.items.armor).map((name) => (
     <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}
     </Link>
@@ -29,7 +28,7 @@ const Navbar = (props) => {
       <div className="d-flex cart-container navbar order-md-1 ml-auto mr-3">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to={`${props.url}/cart`} className="nav-link">
+            <Link to="/shop/cart" className="nav-link">
               <i className="fas fa-shopping-cart"></i>
             </Link>
           </li>
@@ -95,10 +94,14 @@ const Navbar = (props) => {
           </li>
           <div className="dropdown-divider"></div>
           <li className="nav-item ml-2">
-            <Link className="nav-link">About us</Link>
+            <Link to="/shop/about" className="nav-link">
+              About us
+            </Link>
           </li>
           <li className="nav-item ml-2 ">
-            <Link className="nav-link">Contact us</Link>
+            <Link to="/shop/contact" className="nav-link">
+              Contact us
+            </Link>
           </li>
         </ul>
       </div>
