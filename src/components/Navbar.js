@@ -6,24 +6,26 @@ import { v4 as uuidv4 } from "uuid";
 
 const Navbar = (props) => {
   const weapons = Object.keys(props.items.weapons).map((name) => (
-    <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
+    <NavLink key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}
-    </Link>
+    </NavLink>
   ));
 
   const armor = Object.keys(props.items.armor).map((name) => (
-    <Link key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
+    <NavLink key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}
-    </Link>
+    </NavLink>
   ));
 
   return (
-    <nav className="navbar-light fixed-top navbar navbar-expand-md bg-light">
+    <nav
+      id="nav"
+      className="navbar-dark fixed-top navbar navbar-expand-md bg-dark"
+    >
       {/* Brand */}
       <NavLink className="navbar-brand mx-4" to="/">
         <span id="brand">CRUSADE CALLS</span>
       </NavLink>
-
       {/* Shopping cart (not collapsing) */}
       <div className="d-flex cart-container navbar order-md-1 ml-auto mr-3">
         <ul className="navbar-nav">
@@ -34,7 +36,6 @@ const Navbar = (props) => {
           </li>
         </ul>
       </div>
-
       {/* Toggler/collapsibe Button  */}
       <button
         id="toggle-btn"

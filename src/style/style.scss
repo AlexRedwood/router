@@ -8,12 +8,13 @@ html,
 body,
 #root {
   height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
   margin: 0;
-  background-color: #e8e8e8;
-  color: #495464;
+  background-color: #f1f6f9;
+  color: #343a40;
 }
 
 /* -- Home page -- */
@@ -96,42 +97,77 @@ body {
 /* -- Shop page -- */
 
 /* Nav bar*/
-.navbar-light .navbar-brand {
-  font-family: "Germania One", cursive;
-  color: #bb2205 !important;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 0px black;
-  letter-spacing: 1px;
 
-  @media (max-width: 390px) {
+.navbar {
+  .navbar-brand {
+    font-family: "Germania One", cursive;
+    color: #bb2205 !important;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 0px black;
+    letter-spacing: 1px;
+
+    @media (max-width: 390px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .nav-item {
+    font-size: 1rem;
+  }
+
+  #toggle-btn {
+    align-self: right;
+  }
+
+  .fas {
     font-size: 1.6rem;
+  }
+
+  .dropdown-menu {
+    .dropdown-item:focus {
+      background-color: #bb2205;
+    }
+    .active {
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: white;
+      letter-spacing: 1px;
+      background-color: #bb2205;
+    }
   }
 }
 
-.nav-item {
-  font-size: 1rem;
-}
-
-.fas {
-  font-size: 1.6rem;
-}
-
-#toggle-btn {
-  align-self: right;
-}
-
+// Main shop page
 .shop {
   padding-top: 120px; // For fixed navbar which has ~50px height
+
+  .card {
+    background-color: #f1f6f9 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    .price {
+      font-weight: bold;
+    }
+
+    .buy {
+      text-align: right;
+
+      .btn {
+        color: #f1f6f9 !important;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+    }
+  }
 }
 
-.card {
-  background-color: #f4f4f2;
-}
+//  Welcomin page
+.carousel-inner {
+  width: 100%;
+  margin: 0 auto;
 
-.buy {
-  text-align: right;
-}
-
-.price {
-  font-weight: bold;
+  .carousel-item > img {
+    margin: 0 auto;
+    width: 100%;
+  }
 }

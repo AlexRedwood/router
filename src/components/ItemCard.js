@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouteMatch } from "react-router-dom";
-import items from "../items";
 
 const ItemCard = (props) => {
   function formatToPrice(number) {
@@ -30,9 +29,18 @@ const ItemCard = (props) => {
   }
 
   let cards = goods.map((item) => (
-    <div key={item.id} className="card mb-4 mx-2">
-      <div className="card-header bg-transparent">{item.title}</div>
-      <img src={item.image} alt={item.title} className="card-img-top"></img>
+    <div
+      key={item.id}
+      className="card mb-4 mx-2 col-xs-12 col-sm-4 col-lg-3 shadow-sm p-0"
+    >
+      <div className="card-header bg-transparent font-weight-bold">
+        {item.title}
+      </div>
+      <img
+        src={item.image}
+        alt={item.title}
+        className="card-img-top w-100"
+      ></img>
       <div className="card-body">
         <p className="card-text">{item.description}</p>
         <div className="row justify-content-between">
@@ -41,7 +49,7 @@ const ItemCard = (props) => {
           </div>
           <div className="buy col-6">
             <button type="button" className="btn btn-secondary">
-              BUY
+              ADD
             </button>
           </div>
         </div>
@@ -50,9 +58,7 @@ const ItemCard = (props) => {
   ));
 
   return (
-    <div className="container-fluid row row-cols-1 row-cols-sm-3 row-cols-md-4 justify-content-center">
-      {cards}
-    </div>
+    <div className="container-fluid row justify-content-center">{cards}</div>
   );
 };
 
