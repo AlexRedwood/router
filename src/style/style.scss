@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Germania+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import "animation.scss";
 
 * {
   box-sizing: border-box;
@@ -192,5 +193,18 @@ body {
   .call {
     font-family: "Italianno", cursive;
     max-width: 550px;
+
+    .first-part-call {
+      animation-name: flyFromLeft;
+      animation-iteration-count: 1;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+    }
+    .second-part-call {
+      animation-name: flyFromLeft;
+      animation-duration: 2s;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
   }
 }
