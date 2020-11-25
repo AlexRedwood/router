@@ -27,7 +27,7 @@ body {
   .background {
     width: 100%;
     height: 100%;
-    background-image: url("../assets/background.webp");
+    background-image: url("../assets/backgrounds/background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -166,6 +166,7 @@ body {
 //  Welcomin page
 .welcome {
   height: 100%;
+  max-width: 1260px;
 
   .crusader {
     max-height: 180px;
@@ -193,18 +194,25 @@ body {
   .call {
     font-family: "Italianno", cursive;
     max-width: 550px;
+    white-space: nowrap;
 
     .first-part-call {
-      animation-name: flyFromLeft;
-      animation-iteration-count: 1;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
+      white-space: nowrap;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
     }
     .second-part-call {
-      animation-name: flyFromLeft;
-      animation-duration: 2s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
+      white-space: nowrap;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
     }
+  }
+}
+
+.about {
+  .about-icons {
+    max-width: 200px;
   }
 }
