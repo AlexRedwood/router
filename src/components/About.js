@@ -3,6 +3,7 @@ import ArticleAbout from "./ArticleAbout";
 import swordImg from "../assets/icons/sword-icon.png";
 import horseImg from "../assets/icons/horse-icon.svg";
 import armorImg from "../assets/icons/armor-icon.png";
+import { v4 as uuidv4 } from "uuid";
 
 const About = () => {
   const data = [
@@ -12,20 +13,20 @@ const About = () => {
     },
     {
       text: "sturdy armor",
-      imgsrc: horseImg,
+      imgsrc: armorImg,
     },
     {
       text: "and fast delivery",
-      imgsrc: armorImg,
+      imgsrc: horseImg,
     },
   ];
 
   const content = data.map((item) => (
-    <ArticleAbout text={item.text} imgsrc={item.imgsrc} />
+    <ArticleAbout key={uuidv4()} text={item.text} imgsrc={item.imgsrc} />
   ));
 
   return (
-    <section className="row container about justify-content-center align-items-center">
+    <section className="px-0 row container about justify-content-center align-items-center">
       {content}
     </section>
   );
