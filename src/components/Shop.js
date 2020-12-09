@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { Switch, Route } from "react-router-dom";
 import Cart from "./Cart";
@@ -9,18 +9,27 @@ import Contact from "./Contact";
 import items from "../items.js";
 
 const Shop = () => {
+  const [buyings, setBuyings] = useState([]);
+
   return (
     <div className="shop container-fluid d-flex justify-content-center align-items-center">
-      <Navbar items={items} />
+      <Navbar items={items} buyings={buyings} />
       <Switch>
         <Route exact path="/shop/" component={Welcome} />
-        <Route path="/shop/cart" component={Cart} />
+        <Route path="/shop/cart" component={Cart} buyings={buyings} />
         <Route path="/shop/about" component={About} />
         <Route path="/shop/contact" component={Contact} />
 
         <Route
           path="/shop/:id"
-          render={(props) => <ItemCard {...props} {...items} />}
+          render={(props) => (
+            <ItemCard
+              {...props}
+              {...items}
+              buyings={buyings}
+              setBuyings={setBuyings}
+            />
+          )}
         />
       </Switch>
     </div>

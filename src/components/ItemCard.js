@@ -2,6 +2,13 @@ import React from "react";
 import { useRouteMatch } from "react-router-dom";
 
 const ItemCard = (props) => {
+  function handleClick(e, item) {
+    if (!props.buyings.includes(item)) {
+      props.setBuyings([...props.buyings].concat(item));
+    }
+    console.log(props);
+  }
+
   function formatToPrice(number) {
     let formatted = new Intl.NumberFormat("cs-CZ", {
       style: "currency",
@@ -48,7 +55,11 @@ const ItemCard = (props) => {
             {formatToPrice(item.price)}
           </div>
           <div className="buy col-6">
-            <button type="button" className="btn btn-secondary">
+            <button
+              type="button"
+              className="btn btn-secondary"
+              onClick={(e) => handleClick(e, item)}
+            >
               ADD
             </button>
           </div>

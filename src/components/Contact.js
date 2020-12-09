@@ -31,7 +31,7 @@ const Contact = () => {
           id="submit-contact"
           className="btn btn-outline-dark btn-block"
         >
-          Submit
+          Send
         </button>
       </form>
     </div>
