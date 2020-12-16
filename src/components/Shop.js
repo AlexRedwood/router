@@ -16,7 +16,12 @@ const Shop = () => {
       <Navbar items={items} buyings={buyings} />
       <Switch>
         <Route exact path="/shop/" component={Welcome} />
-        <Route path="/shop/cart" component={Cart} buyings={buyings} />
+        <Route
+          path="/shop/cart"
+          render={(props) => (
+            <Cart {...props} buyings={buyings} setBuyings={setBuyings} />
+          )}
+        />
         <Route path="/shop/about" component={About} />
         <Route path="/shop/contact" component={Contact} />
 

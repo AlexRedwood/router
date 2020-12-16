@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 
 const ItemCard = (props) => {
+  useEffect(() => {
+    console.log(props);
+  });
+
   function handleClick(e, item) {
-    if (!props.buyings.includes(item)) {
+    function isInCart(good) {
+      let isFound = props.buyings.find((element) => {
+        return element.id === good.id;
+      });
+      return !!isFound;
+    }
+
+    // If item is in the cart, then
+    if (isInCart(item)) {
+      // 1 make copy of array
+      let items = [...props.buyings];
+      // 2 find index of the item
+      let index = items.findIndex((element) => element.id === item.id);
+      // 3 copy the item
+      let itemCopy = { ...items[index] };
+      // 4 replace property count in it
+      itemCopy.count++;
+      // 5 put it back in array (mutation!)
+      items[index] = itemCopy;
+      // 6 set buyings to a new array
+      props.setBuyings([...items]);
+    } else {
+      item.count = 1;
       props.setBuyings([...props.buyings].concat(item));
     }
-    console.log(props);
   }
 
   function formatToPrice(number) {
