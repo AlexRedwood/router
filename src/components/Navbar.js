@@ -23,7 +23,7 @@ const Navbar = (props) => {
       className="sticky navbar-dark fixed-top navbar navbar-expand-md bg-dark"
     >
       {/* Brand */}
-      <NavLink className="navbar-brand mx-4" to="/">
+      <NavLink className="navbar-brand mx-4" to="/shop">
         <span id="brand">CRUSADE CALLS</span>
       </NavLink>
       {/* Shopping cart (not collapsing) */}

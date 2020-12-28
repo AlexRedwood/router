@@ -1,7 +1,7 @@
 import React from "react";
 import knightImg from "../assets/backgrounds/Knight.png";
 
-const Welcome = () => {
+const Welcome = (props) => {
   return (
     <div className="container-fluid row welcome justify-content-between align-items-center w-100 h-100">
       <div className="my-4 col-4 container">
@@ -12,8 +12,12 @@ const Welcome = () => {
           Crusade is calling.
         </h1>
         <h1 className="second-part-call display-4 text-right">
-          Will you answer?
+          Will you answer? ... {props.counter}
         </h1>
+        <br></br>
+        <button type="button" onClick={props.handleClick}>
+          Increment
+        </button>
       </div>
     </div>
   );
