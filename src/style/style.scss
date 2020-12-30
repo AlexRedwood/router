@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Germania+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "animation.scss";
 
 * {
@@ -17,6 +18,23 @@ body {
   margin: 0;
   background-color: #f1f6f9;
   color: #343a40;
+}
+
+.coverfull {
+  background-image: url("../assets/about/crusaders.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
 }
 
 /* -- Home page -- */
@@ -218,28 +236,50 @@ body {
   }
 }
 
-.about {
-  font-family: "Italianno", cursive;
-  font-size: 2.5rem;
-  margin-top: -180px;
-
-  @media (max-height: 768px) {
-    margin-top: 0;
-  }
-
-  .about-icons {
-    max-width: 200px;
-  }
-}
-
-.contact {
-  margin-top: -200px;
-  @media (max-height: 768px) {
-    margin-top: 0;
-  }
-}
-
+.about,
+.contact,
 .cart {
   position: absolute;
   top: 120px;
+}
+
+.cart-item-img {
+  max-width: 100px;
+}
+
+textarea {
+  resize: none;
+}
+
+.about {
+  top: 250px;
+  position: absolute;
+
+  @media (max-height: 768px) {
+    top: 150px;
+  }
+
+  .about-content {
+    div {
+      p {
+        color: #f1f6f9;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.3em;
+        .crusade {
+          font-family: "Germania One", cursive;
+          color: #bb2205 !important;
+          text-shadow: 2px 2px 0px black;
+          letter-spacing: 2px;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .brand {
+    font-family: "Germania One", cursive;
+    color: #bb2205 !important;
+    font-size: 3rem;
+    text-shadow: 2px 2px 0px black;
+    letter-spacing: 1px;
+  }
 }

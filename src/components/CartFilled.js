@@ -1,30 +1,32 @@
 import React from "react";
 
 const CartFilled = (props) => {
+  let formatToCzechCrowns = props.formatToCzechCrowns;
+
   let items = props.buyings.map((item) => (
-    <div className="card" key={item.id}>
-      <div className="row">
-        <div className="col-2">
-          <img src={item.image} alt="" width="100"></img>
-        </div>
-        <div className="col-5">
-          <div className="col-6">Name:</div>
-          <div className="col-6">Price:</div>
-          <div className="col-6">Quantity:</div>
-        </div>
-        <div className="col-5">
-          <div className="col-6">{item.title}</div>
-          <div className="col-6">{item.price} CZK</div>
-          <div className="col-6">{item.count}</div>
-        </div>
-      </div>
-    </div>
+    <tr key={item.id}>
+      <td className="align-middle">
+        <img className="cart-item-img rounded" src={item.image} alt=""></img>
+      </td>
+      <td className="align-middle">{item.title}</td>
+      <td className="align-middle">
+        {formatToCzechCrowns(item.price * item.count)}
+      </td>
+      <td className="align-middle">{item.count}</td>
+    </tr>
   ));
 
   return (
     <div>
-      <h1>Cart:</h1>
-      <div>{items}</div>
+      <div className="row">
+        <h1 className="mb-5 col-9">Cart:</h1>
+        <button type="button" className="mb-5 col-3 btn btn-secondary">
+          Check out
+        </button>
+      </div>
+      <table className="table table-hover">
+        <tbody>{items}</tbody>
+      </table>
     </div>
   );
 };

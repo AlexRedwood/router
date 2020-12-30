@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="flex-column container contact d-flex align-items-center justify-content-center">
       <h1 className="mb-3 col-12 text-center">Contact Us</h1>
-      <form>
+      <form className="w-50">
         <div className="form-group">
           <label htmlFor="mail-contact"></label>
           <input
@@ -29,7 +29,7 @@ const Contact = () => {
         <button
           type="submit"
           id="submit-contact"
-          className="btn btn-outline-dark btn-block"
+          className="btn btn-secondary btn-block"
         >
           Send
         </button>

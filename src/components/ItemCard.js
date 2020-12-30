@@ -4,17 +4,6 @@ import { useRouteMatch } from "react-router-dom";
 const ItemCard = (props) => {
   useEffect(() => console.log(props));
 
-  function formatToPrice(number) {
-    let formatted = new Intl.NumberFormat("cs-CZ", {
-      style: "currency",
-      currency: "CZK",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(number);
-
-    return formatted;
-  }
-
   let goods;
 
   let { url } = useRouteMatch();
@@ -47,7 +36,7 @@ const ItemCard = (props) => {
         <p className="card-text">{item.description}</p>
         <div className="row justify-content-between">
           <div className="price col-6 d-flex justify-content-start align-items-center">
-            {formatToPrice(item.price)}
+            {props.formatToCzechCrowns(item.price)}
           </div>
           <div className="buy col-6">
             <button

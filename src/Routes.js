@@ -6,6 +6,17 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 const Routes = () => {
   const [buyings, setBuyings] = useState([]);
 
+  function formatToCzechCrowns(number) {
+    let formatted = new Intl.NumberFormat("cs-CZ", {
+      style: "currency",
+      currency: "CZK",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(number);
+
+    return formatted;
+  }
+
   function handleClick(e, item) {
     function isInCart(good) {
       let isFound = buyings.find((element) => {
@@ -46,6 +57,7 @@ const Routes = () => {
               buyings={buyings}
               setBuyings={setBuyings}
               handleClick={handleClick}
+              formatToCzechCrowns={formatToCzechCrowns}
             />
           )}
         />

@@ -11,7 +11,12 @@ const Cart = (props) => {
   if (buyings.length === 0) {
     cartContent = <CartEmpty />;
   } else {
-    cartContent = <CartFilled buyings={buyings} />;
+    cartContent = (
+      <CartFilled
+        formatToCzechCrowns={props.formatToCzechCrowns}
+        buyings={buyings}
+      />
+    );
   }
 
   return <div className="container cart">{cartContent}</div>;
