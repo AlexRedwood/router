@@ -240,23 +240,6 @@ body {
 }
 
 .cart {
-  margin-top: -700px;
-  @media (max-height: 768px) {
-    margin-top: -400px;
-  }
-  @media (max-height: 600px) {
-    margin-top: -300px;
-  }
-
-  @media (max-height: 420px) {
-    margin-top: -200px;
-  }
-
-  @media (max-height: 350px) {
-    margin-top: -100px;
-  }
-
-  @media (max-height: 250px) {
-    margin-top: 0px;
-  }
+  position: absolute;
+  top: 120px;
 }

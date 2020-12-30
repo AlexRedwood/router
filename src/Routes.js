@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Home from "./components/Home";
 import Shop from "./components/Shop";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -6,46 +6,36 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 const Routes = () => {
   const [buyings, setBuyings] = useState([]);
 
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    console.log("Hi from the routes");
-    console.log(buyings);
-  });
-
   function handleClick(e, item) {
-    // function isInCart(good) {
-    //   let isFound = buyings.find((element) => {
-    //     return element.id === good.id;
-    //   });
-    //   return !!isFound;
-    // }
+    function isInCart(good) {
+      let isFound = buyings.find((element) => {
+        return element.id === good.id;
+      });
+      return !!isFound;
+    }
 
-    // // If item is in the cart, then
-    // if (isInCart(item)) {
-    //   // 1 make copy of array
-    //   let items = [...buyings];
-    //   // 2 find index of the item
-    //   let index = items.findIndex((element) => element.id === item.id);
-    //   // 3 copy the item
-    //   let itemCopy = { ...items[index] };
-    //   // 4 replace property count in it
-    //   itemCopy.count++;
-    //   // 5 put it back in array (mutation!)
-    //   items[index] = itemCopy;
-    //   // 6 set buyings to a new array
-    //   setBuyings([...items]);
-    // } else {
-    //   item.count = 1;
-    //   setBuyings((prevBuyings) => [...prevBuyings].concat(item));
-    // }
-
-    setCounter((prevCounter) => prevCounter + 1);
-    console.log("clicked!");
+    // If item is in the cart, then
+    if (isInCart(item)) {
+      // 1 make copy of array
+      let items = [...buyings];
+      // 2 find index of the item
+      let index = items.findIndex((element) => element.id === item.id);
+      // 3 copy the item
+      let itemCopy = { ...items[index] };
+      // 4 replace property count in it
+      itemCopy.count++;
+      // 5 put it back in array (mutation!)
+      items[index] = itemCopy;
+      // 6 set buyings to a new array
+      setBuyings([...items]);
+    } else {
+      item.count = 1;
+      setBuyings((prevBuyings) => [...prevBuyings].concat(item));
+    }
   }
 
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL + "/"} forceRefresh={true}>
+    <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route
@@ -53,8 +43,6 @@ const Routes = () => {
           render={(props) => (
             <Shop
               {...props}
-              counter={counter}
-              setCounter={setCounter}
               buyings={buyings}
               setBuyings={setBuyings}
               handleClick={handleClick}

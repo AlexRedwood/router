@@ -9,7 +9,7 @@ import Contact from "./Contact";
 import items from "../items.js";
 
 const Shop = (props) => {
-  let { buyings, setBuyings, counter, setCounter } = props;
+  let { buyings, setBuyings } = props;
 
   let handleClick = props.handleClick;
 
@@ -23,8 +23,6 @@ const Shop = (props) => {
           render={(props) => (
             <Welcome
               {...props}
-              counter={counter}
-              setCounter={setCounter}
               buyings={buyings}
               setBuyings={setBuyings}
               handleClick={handleClick}
@@ -36,13 +34,7 @@ const Shop = (props) => {
         <Route
           path="/shop/cart"
           render={(props) => (
-            <Cart
-              {...props}
-              buyings={buyings}
-              setBuyings={setBuyings}
-              counter={counter}
-              setCounter={setCounter}
-            />
+            <Cart {...props} buyings={buyings} setBuyings={setBuyings} />
           )}
         />
         <Route path="/shop/about" component={About} />

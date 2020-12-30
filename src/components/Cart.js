@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
+import CartEmpty from "./CartEmpty";
+import CartFilled from "./CartFilled";
 
 const Cart = (props) => {
-  useEffect(() => {
-    console.log("Hi from the cart");
-    console.log(props);
-  });
+  let buyings = props.buyings;
+  console.log(buyings);
 
-  return (
-    <div className="container cart">
-      <h1>Cart is empty now</h1>
-    </div>
-  );
+  let cartContent;
+
+  if (buyings.length === 0) {
+    cartContent = <CartEmpty />;
+  } else {
+    cartContent = <CartFilled buyings={buyings} />;
+  }
+
+  return <div className="container cart">{cartContent}</div>;
 };
 
 export default Cart;
