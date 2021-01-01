@@ -17,14 +17,14 @@ const CartFilled = (props) => {
   ));
 
   return (
-    <div>
+    <div className="cart-filled">
       <div className="row">
         <h1 className="mb-5 col-9">Cart:</h1>
-        <button type="button" className="mb-5 col-3 btn btn-secondary">
-          Check out
+        <button type="button" className="mb-5 col-3 btn">
+          <span>CHECK OUT</span>
         </button>
       </div>
-      <table className="table table-hover">
+      <table className="table">
         <tbody>{items}</tbody>
       </table>
     </div>

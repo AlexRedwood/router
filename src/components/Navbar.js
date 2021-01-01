@@ -20,7 +20,7 @@ const Navbar = (props) => {
   return (
     <nav
       id="nav"
-      className="sticky navbar-dark fixed-top navbar navbar-expand-md bg-dark"
+      className="sticky navbar-dark  bg-dark fixed-top navbar navbar-expand-md "
     >
       {/* Brand */}
       <NavLink className="navbar-brand mx-4" to="/shop">
