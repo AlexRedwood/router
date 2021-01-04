@@ -5,6 +5,19 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { v4 as uuidv4 } from "uuid";
 
 const Navbar = (props) => {
+  function getItemsCount() {
+    console.log(props.buyings);
+    if (props.buyings.length > 0) {
+      let count = 0;
+      props.buyings.forEach((element) => {
+        count += element.count;
+      });
+
+      return count;
+    }
+    return null;
+  }
+
   const weapons = Object.keys(props.items.weapons).map((name) => (
     <NavLink key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}
@@ -31,7 +44,11 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/shop/cart" className="nav-link">
-              <i className="fas fa-shopping-cart"></i>
+              <i className="fas fa-shopping-cart">
+                <span className="badge badge-pill badge-primary">
+                  {getItemsCount()}
+                </span>
+              </i>
             </Link>
           </li>
         </ul>

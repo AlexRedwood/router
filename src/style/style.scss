@@ -17,6 +17,7 @@ $important-color: #bb2205;
   span {
     position: relative;
     z-index: 2;
+    text-decoration: none;
   }
 
   &::after {
@@ -158,6 +159,11 @@ body {
 
   .nav-item {
     font-size: 1rem;
+
+    .badge {
+      font-size: 1rem;
+      background-color: $important-color;
+    }
   }
 
   #toggle-btn {
@@ -191,6 +197,8 @@ body {
   .card {
     background-color: $primary-color !important;
     font-family: "Roboto", sans-serif !important;
+    letter-spacing: 1px;
+    border: none;
 
     .price {
       font-weight: bold;
@@ -199,10 +207,24 @@ body {
     .buy {
       text-align: right;
 
-      .btn {
-        color: $primary-color !important;
+      .card-btn {
+        position: relative;
+        font-size: 1.1rem;
         letter-spacing: 1px;
-        font-weight: bold;
+        border: 1px solid #343a40;
+        color: #343a40;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.8);
+          color: $primary-color;
+          border: 1px solid transparent;
+        }
+
+        &:focus {
+          outline: none !important;
+          box-shadow: none;
+        }
       }
     }
   }
@@ -222,7 +244,7 @@ body {
     max-width: 550px;
     white-space: nowrap;
     font-family: "Roboto", sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: $primary-color;
     white-space: nowrap;
   }
@@ -279,12 +301,8 @@ textarea {
 
 .about,
 .contact {
-  top: 200px;
+  top: 150px;
   position: absolute;
-
-  @media (max-height: 768px) {
-    top: 150px;
-  }
 
   #mail-contact,
   #text-contact,
@@ -293,8 +311,25 @@ textarea {
     letter-spacing: 1px;
     line-height: 1.5;
     font-family: "Roboto", sans-serif;
-    min-width: 250px;
-    max-width: 500px;
+  }
+
+  #mail-contact,
+  #text-contact,
+  #name-contact {
+    background-color: $primary-color;
+  }
+
+  .contact-form {
+    width: 400px;
+
+    @media (max-width: 460px) {
+      width: 80%;
+      min-width: 320px;
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .contact-labels {
@@ -341,5 +376,29 @@ textarea {
         }
       }
     }
+  }
+}
+
+// Sent component
+
+.sent-main {
+  position: absolute;
+  top: 150px;
+  white-space: nowrap;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 3px;
+  color: $primary-color;
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  #back-to-store-btn {
+    @include important-button();
+    font-size: 3rem;
   }
 }

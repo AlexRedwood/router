@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouteMatch } from "react-router-dom";
 
 const ItemCard = (props) => {
-  useEffect(() => console.log(props));
-
   let goods;
 
   let { url } = useRouteMatch();
@@ -22,16 +20,12 @@ const ItemCard = (props) => {
   let cards = goods.map((item) => (
     <div
       key={item.id}
-      className="card mb-4 mx-2 col-xs-12 col-sm-4 col-lg-3 shadow-sm p-0"
+      className="card mb-4 mx-2 col-xs-12 col-sm-4 col-lg-3 p-0"
     >
       <div className="card-header bg-transparent font-weight-bold">
         {item.title}
       </div>
-      <img
-        src={item.image}
-        alt={item.title}
-        className="card-img-top w-100"
-      ></img>
+      <img src={item.image} alt={item.title} className="card-img-top"></img>
       <div className="card-body">
         <p className="card-text">{item.description}</p>
         <div className="row justify-content-between">
@@ -41,7 +35,7 @@ const ItemCard = (props) => {
           <div className="buy col-6">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn card-btn"
               onClick={(e) => props.handleClick(e, item)}
             >
               ADD

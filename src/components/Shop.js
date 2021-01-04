@@ -7,6 +7,7 @@ import ItemCard from "./ItemCard";
 import About from "./About";
 import Contact from "./Contact";
 import items from "../items.js";
+import Sent from "./Sent";
 
 const Shop = (props) => {
   let { buyings, setBuyings, formatToCzechCrowns } = props;
@@ -44,7 +45,7 @@ const Shop = (props) => {
         />
         <Route path="/shop/about" component={About} />
         <Route path="/shop/contact" component={Contact} />
-
+        <Route path="/shop/sent" component={Sent} />
         <Route
           path="/shop/:id"
           render={(props) => (

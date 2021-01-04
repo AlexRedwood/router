@@ -4,7 +4,6 @@ import CartFilled from "./CartFilled";
 
 const Cart = (props) => {
   let buyings = props.buyings;
-  console.log(buyings);
 
   let cartContent;
 

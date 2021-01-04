@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <div className="flex-column container contact d-flex align-items-center justify-content-center">
-      <h1 className="mb-5 col-12 text-center brand">GET IN TOUCH</h1>
+      <h1 className="mb-4 col-12 text-center brand">GET IN TOUCH</h1>
       <br></br>
-      <form className="w-50">
+      <form className="contact-form">
         <div className="form-group">
           <label className="contact-labels" htmlFor="name-contact">
             Name
@@ -44,13 +45,15 @@ const Contact = () => {
             required
           />
         </div>
-        <button
-          type="submit"
-          id="submit-contact"
-          className="mt-4 btn btn-block"
-        >
-          <span>SEND</span>
-        </button>
+        <Link to="sent">
+          <button
+            type="submit"
+            id="submit-contact"
+            className="mt-5 btn btn-block"
+          >
+            <span>SEND</span>
+          </button>
+        </Link>
       </form>
     </div>
   );
