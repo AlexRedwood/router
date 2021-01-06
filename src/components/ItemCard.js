@@ -32,7 +32,7 @@ const ItemCard = (props) => {
           <div className="price col-6 d-flex justify-content-start align-items-center">
             {props.formatToCzechCrowns(item.price)}
           </div>
-          <div className="buy col-6">
+          <div className="buy col-6 d-flex justify-content-end">
             <button
               type="button"
               className="btn card-btn"
@@ -40,6 +40,7 @@ const ItemCard = (props) => {
             >
               ADD
             </button>
+            <div className="added">Added!</div>
           </div>
         </div>
       </div>

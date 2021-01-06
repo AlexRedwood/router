@@ -5,19 +5,22 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import { v4 as uuidv4 } from "uuid";
 
 const Navbar = (props) => {
+  // Get quantity of all items added to cart by user
   function getItemsCount() {
     console.log(props.buyings);
+
     if (props.buyings.length > 0) {
       let count = 0;
       props.buyings.forEach((element) => {
         count += element.count;
       });
 
-      return count;
+      return count < 100 ? count : "99+";
     }
     return null;
   }
 
+  // Links for dropdown menus
   const weapons = Object.keys(props.items.weapons).map((name) => (
     <NavLink key={uuidv4()} to={`/shop/${name}`} className="dropdown-item">
       {name}

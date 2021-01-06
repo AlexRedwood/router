@@ -17,7 +17,21 @@ const Routes = () => {
     return formatted;
   }
 
+  function animateAddBtn(e) {
+    let sibling = e.currentTarget.parentElement.children[1];
+
+    if (!sibling.classList.contains("animated")) {
+      sibling.classList.add("animated");
+
+      setTimeout(function () {
+        sibling.classList.remove("animated");
+      }, 1000);
+    }
+  }
+
   function handleClick(e, item) {
+    animateAddBtn(e);
+
     function isInCart(good) {
       let isFound = buyings.find((element) => {
         return element.id === good.id;
