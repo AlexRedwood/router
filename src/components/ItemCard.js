@@ -36,7 +36,7 @@ const ItemCard = (props) => {
             <button
               type="button"
               className="btn card-btn"
-              onClick={(e) => props.handleClick(e, item)}
+              onClick={(e) => props.handleAdd(e, item)}
             >
               ADD
             </button>

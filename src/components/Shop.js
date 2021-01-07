@@ -12,7 +12,8 @@ import Sent from "./Sent";
 const Shop = (props) => {
   let { buyings, setBuyings, formatToCzechCrowns } = props;
 
-  let handleClick = props.handleClick;
+  let handleAdd = props.handleAdd;
+  let handleRemove = props.handleRemove;
 
   return (
     <div className="shop container-fluid d-flex justify-content-center align-items-center">
@@ -22,12 +23,7 @@ const Shop = (props) => {
           exact
           path="/shop/"
           render={(props) => (
-            <Welcome
-              {...props}
-              buyings={buyings}
-              setBuyings={setBuyings}
-              handleClick={handleClick}
-            />
+            <Welcome {...props} buyings={buyings} setBuyings={setBuyings} />
           )}
           buyings={buyings}
           setBuyings={setBuyings}
@@ -40,6 +36,7 @@ const Shop = (props) => {
               buyings={buyings}
               setBuyings={setBuyings}
               formatToCzechCrowns={formatToCzechCrowns}
+              handleRemove={handleRemove}
             />
           )}
         />
@@ -54,7 +51,7 @@ const Shop = (props) => {
               {...items}
               buyings={buyings}
               setBuyings={setBuyings}
-              handleClick={handleClick}
+              handleAdd={handleAdd}
               formatToCzechCrowns={formatToCzechCrowns}
             />
           )}

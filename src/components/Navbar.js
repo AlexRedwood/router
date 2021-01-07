@@ -7,8 +7,6 @@ import { v4 as uuidv4 } from "uuid";
 const Navbar = (props) => {
   // Get quantity of all items added to cart by user
   function getItemsCount() {
-    console.log(props.buyings);
-
     if (props.buyings.length > 0) {
       let count = 0;
       props.buyings.forEach((element) => {

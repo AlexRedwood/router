@@ -298,7 +298,7 @@ body {
       text-shadow: 2px 2px 0px black;
       letter-spacing: 3px;
     }
-    button {
+    .checkout {
       @include important-button;
       font-size: 1.4rem;
     }
@@ -306,6 +306,22 @@ body {
     table {
       color: $primary-color;
       letter-spacing: 2px;
+
+      .remove-btn {
+        background-color: transparent;
+        color: $important-color;
+        border: none;
+        outline: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $primary-color;
+        }
+
+        i {
+          font-size: 1.3rem;
+        }
+      }
     }
   }
 

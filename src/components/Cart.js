@@ -14,6 +14,7 @@ const Cart = (props) => {
       <CartFilled
         formatToCzechCrowns={props.formatToCzechCrowns}
         buyings={buyings}
+        handleRemove={props.handleRemove}
       />
     );
   }

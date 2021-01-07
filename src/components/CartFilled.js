@@ -13,6 +13,16 @@ const CartFilled = (props) => {
         {formatToCzechCrowns(item.price * item.count)}
       </td>
       <td className="align-middle">{item.count}</td>
+      <td className="align-middle">
+        <button
+          onClick={props.handleRemove}
+          id={item.id}
+          className="remove-btn d-flex justify-content-center align-items-center"
+          type="button"
+        >
+          <i className="fas fa-times"></i>
+        </button>
+      </td>
     </tr>
   ));
 
@@ -20,7 +30,7 @@ const CartFilled = (props) => {
     <div className="cart-filled">
       <div className="row">
         <h1 className="mb-5 col-9">Cart:</h1>
-        <button type="button" className="mb-5 col-3 btn">
+        <button type="button" className="checkout mb-5 col-3 btn">
           <span>CHECK OUT</span>
         </button>
       </div>

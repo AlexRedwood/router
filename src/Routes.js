@@ -29,7 +29,20 @@ const Routes = () => {
     }
   }
 
-  function handleClick(e, item) {
+  function handleRemove(e) {
+    // 1 get id of an item to remove from button id
+    let id = e.currentTarget.id;
+    // 2 make copy of array
+    let items = [...buyings];
+    // 3 find index of the item
+    let index = items.findIndex((element) => element.id === id);
+    // 4 remove item by found index
+    items.splice(index, 1);
+    // 5 set buyings to copied array (minus removed item)
+    setBuyings([...items]);
+  }
+
+  function handleAdd(e, item) {
     animateAddBtn(e);
 
     function isInCart(good) {
@@ -70,7 +83,8 @@ const Routes = () => {
               {...props}
               buyings={buyings}
               setBuyings={setBuyings}
-              handleClick={handleClick}
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
               formatToCzechCrowns={formatToCzechCrowns}
             />
           )}
