@@ -8,12 +8,15 @@ import About from "./About";
 import Contact from "./Contact";
 import items from "../items.js";
 import Sent from "./Sent";
+import Checkout from "./Checkout";
 
 const Shop = (props) => {
   let { buyings, setBuyings, formatToCzechCrowns } = props;
 
   let handleAdd = props.handleAdd;
   let handleRemove = props.handleRemove;
+  let handleChangeQuantity = props.handleChangeQuantity;
+  let clearCart = props.clearCart;
 
   return (
     <div className="shop container-fluid d-flex justify-content-center align-items-center">
@@ -37,12 +40,15 @@ const Shop = (props) => {
               setBuyings={setBuyings}
               formatToCzechCrowns={formatToCzechCrowns}
               handleRemove={handleRemove}
+              handleChangeQuantity={handleChangeQuantity}
+              clearCart={clearCart}
             />
           )}
         />
         <Route path="/shop/about" component={About} />
         <Route path="/shop/contact" component={Contact} />
         <Route path="/shop/sent" component={Sent} />
+        <Route path="/shop/checkout" component={Checkout} />
         <Route
           path="/shop/:id"
           render={(props) => (

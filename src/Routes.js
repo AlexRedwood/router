@@ -6,6 +6,10 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 const Routes = () => {
   const [buyings, setBuyings] = useState([]);
 
+  function clearCart() {
+    setBuyings([]);
+  }
+
   function formatToCzechCrowns(number) {
     let formatted = new Intl.NumberFormat("cs-CZ", {
       style: "currency",
@@ -29,9 +33,28 @@ const Routes = () => {
     }
   }
 
+  function handleChangeQuantity(e) {
+    // 1 get id of an item to change its quantity
+    let id = e.currentTarget.parentElement.parentElement.parentElement.id;
+    // 2 make copy of array
+    let items = [...buyings];
+    // 3 find index of the item
+    let index = items.findIndex((element) => element.id === id);
+    // 4 find if increment or decrement
+    let direction = e.currentTarget.classList.value.split("-")[0];
+    // 5 increment OR decrement item count
+    direction === "increase"
+      ? (items[index].count += 1)
+      : (items[index].count -= 1);
+    // 6 if count is 0 then remove item completely
+    if (items[index].count < 1) items.splice(index, 1);
+    // 7 set buyings to copied array
+    setBuyings([...items]);
+  }
+
   function handleRemove(e) {
     // 1 get id of an item to remove from button id
-    let id = e.currentTarget.id;
+    let id = e.currentTarget.parentElement.parentElement.id;
     // 2 make copy of array
     let items = [...buyings];
     // 3 find index of the item
@@ -85,7 +108,9 @@ const Routes = () => {
               setBuyings={setBuyings}
               handleAdd={handleAdd}
               handleRemove={handleRemove}
+              handleChangeQuantity={handleChangeQuantity}
               formatToCzechCrowns={formatToCzechCrowns}
+              clearCart={clearCart}
             />
           )}
         />

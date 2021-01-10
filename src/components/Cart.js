@@ -15,6 +15,8 @@ const Cart = (props) => {
         formatToCzechCrowns={props.formatToCzechCrowns}
         buyings={buyings}
         handleRemove={props.handleRemove}
+        handleChangeQuantity={props.handleChangeQuantity}
+        clearCart={props.clearCart}
       />
     );
   }

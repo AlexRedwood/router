@@ -298,9 +298,18 @@ body {
       text-shadow: 2px 2px 0px black;
       letter-spacing: 3px;
     }
+
+    a {
+      display: flex;
+      text-decoration: none;
+      color: $primary-color;
+    }
+
     .checkout {
       @include important-button;
       font-size: 1.4rem;
+      width: 100%;
+      display: block;
     }
 
     table {
@@ -320,6 +329,24 @@ body {
 
         i {
           font-size: 1.3rem;
+        }
+      }
+
+      .count-container {
+        min-width: 70px;
+        max-width: 100px;
+      }
+
+      .increase-btn,
+      .decrease-btn {
+        background-color: transparent;
+        color: $primary-color;
+        border: none;
+        outline: none;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: rotate(180deg);
         }
       }
     }
@@ -430,7 +457,8 @@ textarea {
 
 // Sent component
 
-.sent-main {
+.sent-main,
+.checkout-main {
   position: absolute;
   top: 150px;
   white-space: nowrap;
