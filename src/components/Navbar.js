@@ -37,15 +37,15 @@ const Navbar = (props) => {
       className="sticky navbar-dark  bg-dark fixed-top navbar navbar-expand-md "
     >
       {/* Brand */}
-      <NavLink className="navbar-brand mx-4" to="/shop">
+      <NavLink className="navbar-brand mx-lg-4 mx-0" to="/shop">
         <span id="brand">CRUSADE CALLS</span>
       </NavLink>
       {/* Shopping cart (not collapsing) */}
-      <div className="d-flex cart-container navbar order-md-1 ml-auto mr-3">
+      <div className="d-flex cart-container navbar order-md-1 ml-auto">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/shop/cart" className="nav-link">
-              <i className="fas fa-shopping-cart">
+              <i className="fas fa-shopping-cart mt-1">
                 <span className="badge badge-pill badge-primary">
                   {getItemsCount()}
                 </span>
@@ -57,7 +57,7 @@ const Navbar = (props) => {
       {/* Toggler/collapsibe Button  */}
       <button
         id="toggle-btn"
-        className="navbar-toggler mr-3"
+        className="navbar-toggler mr-lg-3"
         type="button"
         data-toggle="collapse"
         data-target="#navlist"

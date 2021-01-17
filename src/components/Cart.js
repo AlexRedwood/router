@@ -21,7 +21,11 @@ const Cart = (props) => {
     );
   }
 
-  return <div className="container cart">{cartContent}</div>;
+  return (
+    <div className="container cart d-flex justify-content-center">
+      {cartContent}
+    </div>
+  );
 };
 
 export default Cart;

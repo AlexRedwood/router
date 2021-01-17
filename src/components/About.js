@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section className="mh-30 px-0 row container about justify-content-center align-items-center">
       <article className="about-content col-12 row justify-content-center align-items-center">
-        <div className="col-12">
+        <div className="col-12 d-flex justify-content-center">
           <h1 className="brand mb-5 text-center justify-content-center align-items-center">
             CRUSADE CALLS
           </h1>
